@@ -38,12 +38,12 @@ namespace Website.Controllers
                 //WishList w = db.WishList.FirstOrDefault(rec => rec.Product.Id == Id);
                 //if (w == null)
                 //{
-                    Product p = db.Products.Find(Id);
-                    if (p == null)
-                    {
-                        Console.WriteLine("no product in Db");
-                        //need to call api
-                    }
+                   Product p = db.Products.Find(Id);
+                    //if (p == null)
+                    //{
+                    //    Console.WriteLine("no product in Db");
+                    //    //need to call api
+                    //}
 
                     ApplicationUser u = db.Users.Find(User.Identity.GetUserId());
                     Console.WriteLine("user id" + u.Email);
@@ -60,9 +60,9 @@ namespace Website.Controllers
                     db.WishList.Add(wish);
                     db.SaveChanges();
 
-                //}
+                }
 
-            }
+            //}
 
             return RedirectToAction("Index", "Product");
         }
