@@ -35,9 +35,9 @@ namespace Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                WishList w = db.WishList.FirstOrDefault(rec => rec.Product.Id == Id);
-                if (w == null)
-                {
+                //WishList w = db.WishList.FirstOrDefault(rec => rec.Product.Id == Id);
+                //if (w == null)
+                //{
                     Product p = db.Products.Find(Id);
                     if (p == null)
                     {
@@ -60,7 +60,7 @@ namespace Website.Controllers
                     db.WishList.Add(wish);
                     db.SaveChanges();
 
-                }
+                //}
 
             }
 
