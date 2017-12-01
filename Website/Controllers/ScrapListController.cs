@@ -23,10 +23,10 @@ namespace Website.Controllers
                 //if (w == null)
                 //{
                     Product p = db.Products.Find(Id);
-                    if (p == null)
-                    {
-                        Console.WriteLine("no product");
-                    }
+                  //  if (p == null)
+                   // {
+                    //    Console.WriteLine("no product");
+                    //}
                     ApplicationUser u = db.Users.Find(User.Identity.GetUserId());
                     ScrapList rec = new ScrapList()
                     {
@@ -37,9 +37,9 @@ namespace Website.Controllers
                     db.ScrapList.Add(rec);
                     db.SaveChanges();
 
-                //}
+                }
 
-            }
+            //}
 
             return RedirectToAction("Index", "Product");
         }
